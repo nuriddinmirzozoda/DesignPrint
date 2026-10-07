@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="tg" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DesignPrint - Тарҳрезӣ ва Чопи муосир дар Душанбе</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#eff6ff',
+                            100: '#dbeafe',
+                            500: '#1d4ed8',
+                            600: '#1565c0',
+                            700: '#0d6efd',
+                            800: '#1e40af',
+                            900: '#1e3a8a',
+                        },
+                        accent: {
+                            yellow: '#ffca28',
+                            gold: '#f59e0b',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+
+        .glass-panel {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .glass-card:hover {
+            border-color: rgba(13, 110, 253, 0.5);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px -10px rgba(13, 110, 253, 0.3);
+        }
+
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 20%, rgba(13, 110, 253, 0.25) 0%, rgba(15, 23, 42, 0) 70%);
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #0d6efd;
+        }
+
+        /* Pulse aura animation */
+        @keyframes pulse-subtle {
+            0%, 100% { opacity: 0.6; transform: scale(1); }
+            50% { opacity: 0.9; transform: scale(1.03); }
+        }
+        .pulse-aura {
+            animation: pulse-subtle 4s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col selection:bg-brand-600 selection:text-white">
+
+    <!-- Navigation Bar -->
+    <header class="fixed top-0 left-0 right-0 z-40 glass-panel border-b border-slate-800 transition-all duration-300" id="mainHeader">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#" id="logoLink" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-700 to-brand-500 flex items-center justify-center text-white shadow-lg shadow-brand-600/40 group-hover:scale-105 transition-transform">
+                    <i class="fa-solid me-0 fa-print text-xl"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="text-2xl font-black tracking-tight text-white flex items-center">
+                        Design<span class="text-accent-yellow">Print</span>
+                    </span>
+                    <span class="text-[10px] tracking-widest text-slate-400 uppercase font-semibold">Студияи Дизайн ва Чоп</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-8 font-medium text-sm">
+                <a href="#home" class="text-white hover:text-accent-yellow transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-yellow hover:after:w-full after:transition-all">Асосӣ</a>
+                <a href="#services" class="text-slate-300 hover:text-accent-yellow transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-yellow hover:after:w-full after:transition-all">Хизматрасониҳо</a>
+                <a href="#portfolio" class="text-slate-300 hover:text-accent-yellow transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-yellow hover:after:w-full after:transition-all">Портфолио</a>
+                <a href="#pricing" class="text-slate-300 hover:text-accent-yellow transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-yellow hover:after:w-full after:transition-all">Нархнома</a>
+                <a href="#contact" class="text-slate-300 hover:text-accent-yellow transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-accent-yellow hover:after:w-full after:transition-all">Алоқа</a>
+            </nav>
+
+            <!-- Actions & Contact Button -->
+            <div class="hidden lg:flex items-center gap-4">
+                <a href="tel:+992900000000" class="flex items-center gap-2 text-xs text-slate-300 hover:text-white bg-slate-800/80 px-3 py-2 rounded-lg border border-slate-700">
+                    <i class="fa-solid fa-phone text-accent-yellow"></i>
+                    <span>+992 (98) 765 43 21</span>
+                </a>
+                <a href="#contact" class="bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-semibold text-sm px-5 py-2.5 rounded-xl shadow-lg shadow-brand-600/30 hover:shadow-brand-600/50 transition-all">
+                    Супориш додан
+                </a>
+            </div>
+
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobileMenuBtn" class="md:hidden p-2 rounded-lg bg-slate-800 text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-slate-900/95 border-b border-slate-800 px-4 pt-2 pb-6 space-y-3">
+            <a href="#home" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-accent-yellow font-medium">Асосӣ</a>
+            <a href="#services" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-accent-yellow font-medium">Хизматрасониҳо</a>
+            <a href="#portfolio" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-accent-yellow font-medium">Портфолио</a>
+            <a href="#pricing" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-accent-yellow font-medium">Нархнома</a>
+            <a href="#contact" class="mobile-nav-link block px-3 py-2 rounded-lg text-slate-200 hover:bg-slate-800 hover:text-accent-yellow font-medium">Алоқа</a>
+            <div class="pt-4 border-t border-slate-800 flex flex-col gap-3">
+                <a href="tel:+992987654321" class="flex items-center justify-center gap-2 text-sm text-slate-300 bg-slate-800 py-2.5 rounded-lg">
+                    <i class="fa-solid fa-phone text-accent-yellow"></i>
+                    <span>+992 (98) 765 43 21</span>
+                </a>
+                <a href="#contact" class="mobile-nav-link text-center bg-brand-600 hover:bg-brand-700 text-white font-semibold py-2.5 rounded-lg shadow-md">
+                    Супориш додан
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow pt-20">
+
+        <!-- Hero Section -->
+        <section id="home" class="relative py-20 lg:py-32 overflow-hidden hero-gradient">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Left Hero Content -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-900/60 border border-brand-500/30 text-brand-300 text-xs sm:text-sm font-semibold tracking-wide backdrop-blur-md">
+                            <span class="flex h-2 w-2 rounded-full bg-accent-yellow animate-ping"></span>
+                            <span>Хизматрасонии чопии №1 дар ш. Душанбе</span>
+                        </div>
+
+                        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight text-white">
+                            Бренди худро бо <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-brand-500 to-accent-yellow">Дизайни Муосир</span> ва Чопи Босифат Равшан Созед!
+                        </h1>
+
+                        <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Мо хизматрасониҳои пурраи полиграфӣ ва тарҳрезии графикиро пешниҳод менамоем: Визиткаҳо, Логотипҳо, Баннерҳои калонҳаҷм, Флаерҳо ва Брендинг бо кафолати сифат.
+                        </p>
+
+                        <!-- Service Badges -->
+                        <div class="flex flex-wrap justify-center lg:justify-start gap-2 pt-2">
+                            <span class="bg-slate-800/80 border border-slate-700/80 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300"><i class="fa-solid fa-address-card text-brand-500 mr-1.5"></i> Визиткаҳо</span>
+                            <span class="bg-slate-800/80 border border-slate-700/80 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300"><i class="fa-solid fa-pen-nib text-brand-500 mr-1.5"></i> Логотип</span>
+                            <span class="bg-slate-800/80 border border-slate-700/80 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300"><i class="fa-solid fa-scroll text-brand-500 mr-1.5"></i> Баннерҳо</span>
+                            <span class="bg-slate-800/80 border border-slate-700/80 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300"><i class="fa-solid fa-palette text-brand-500 mr-1.5"></i> Брендинг</span>
+                            <span class="bg-slate-800/80 border border-slate-700/80 px-3 py-1.5 rounded-lg text-xs font-medium text-slate-300"><i class="fa-solid fa-print text-brand-500 mr-1.5"></i> Полиграфия</span>
+                        </div>
+
+                        <!-- Hero CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#portfolio" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold px-8 py-4 rounded-xl shadow-xl shadow-brand-600/30 hover:shadow-brand-600/50 transition-all text-base">
+                                <i class="fa-solid fa-eye"></i>
+                                <span>Муоинаи портфолио</span>
+                            </a>
+                            <a href="#contact" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-slate-800/80 hover:bg-slate-700 text-slate-200 border border-slate-700 hover:border-slate-600 font-bold px-8 py-4 rounded-xl transition-all text-base">
+                                <i class="fa-solid fa-paper-plane text-accent-yellow"></i>
+                                <span>Тамос бо мо</span>
+                            </a>
+                        </div>
+
+                        <!-- Stats Highlights -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-slate-800/80 max-w-lg mx-auto lg:mx-0">
+                            <div>
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-white">500+</span>
+                                <span class="text-xs text-slate-400">Лоиҳаҳои тайёр</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-white">99%</span>
+                                <span class="text-xs text-slate-400">Мизоҷони розӣ</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl sm:text-3xl font-extrabold text-white">24/7</span>
+                                <span class="text-xs text-slate-400">Дастгирии зуд</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Hero Visual Cards Showcase -->
+                    <div class="lg:col-span-5 relative">
+                        <div class="relative mx-auto max-w-md lg:max-w-none">
+                            
+                            <!-- Glowing backdrop -->
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-600 to-accent-yellow rounded-3xl blur-2xl opacity-30 pulse-aura"></div>
+                            
+                            <!-- Main Feature Banner Card -->
+                            <div class="relative glass-card rounded-2xl p-6 space-y-6 shadow-2xl">
+                                <div class="relative h-64 sm:h-72 rounded-xl overflow-hidden group">
+                                    <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=800&q=80" alt="Design & Printing Showcase" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/20 to-transparent"></div>
+                                    <div class="absolute bottom-4 left-4 right-4">
+                                        <span class="px-2.5 py-1 bg-brand-600 text-white text-xs font-bold rounded-md">ПРЕМУМ КИФИЯТ</span>
+                                        <h3 class="text-lg font-bold text-white mt-1">Чопи баландсифат бо дастгоҳҳои муосир</h3>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Mini Badge 1 -->
+                                <div class="glass-panel p-3 rounded-xl flex items-center gap-3 border border-slate-700/60 shadow-lg">
+                                    <div class="w-10 h-10 rounded-lg bg-accent-yellow/20 text-accent-yellow flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-bolt"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white">Иҷрои фаврӣ</h4>
+                                        <p class="text-xs text-slate-400">Омодасозии визиткаҳо дар 24 соат</p>
+                                    </div>
+                                </div>
+
+                                <!-- Floating Mini Badge 2 -->
+                                <div class="glass-panel p-3 rounded-xl flex items-center gap-3 border border-slate-700/60 shadow-lg">
+                                    <div class="w-10 h-10 rounded-lg bg-brand-500/20 text-brand-400 flex items-center justify-center text-lg">
+                                        <i class="fa-solid fa-truck-fast"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-bold text-white">Расонидани ройгон</h4>
+                                        <p class="text-xs text-slate-400">Дар дохили шаҳри Душанбе</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="py-20 bg-slate-900/50 relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-500 uppercase mb-2">Хизматрасониҳои Мо</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Тамоми намуди хизматрасонии Дизайн ва Чоп</p>
+                    <p class="text-slate-400 mt-4 text-sm sm:text-base">Аз идеяи аввалин то чопи ниҳоӣ — мо тиҷорати шуморо ба сатҳи нав мебарем.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Service Card 1 -->
+                    <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-pen-nib"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Тарҳрезии Логотип & Брендинг</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Офаридани симои беназири бренди шумо, ки диққати мизоҷонро ҷалб мекунад. Интихоби рангҳо, шрифтҳо ва Brandbook-и пурра.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="preselectService('Логотип ва Брендинг')" class="inline-flex items-center gap-2 text-brand-400 hover:text-accent-yellow text-sm font-semibold transition-colors">
+                            <span>Супориш додан</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-address-card"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Визиткаҳои Премиум</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Чопи визиткаҳо дар рӯи қоғази ғафс, коғазҳои тафсилотии ламинатсияшуда, тиллокоришуда ва пластикӣ бо тарҳи махсус.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="preselectService('Визиткаҳо')" class="inline-flex items-center gap-2 text-brand-400 hover:text-accent-yellow text-sm font-semibold transition-colors">
+                            <span>Супориш додан</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-scroll"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Чопи Калонҳаҷм (Баннер)</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Чопи баннерҳо, оракал, оракал-перфоратсия ва плакатҳои рекламавӣ барои берун ва дохили бино бо рангҳои дурахшон.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="preselectService('Баннерҳо ва Оракал')" class="inline-flex items-center gap-2 text-brand-400 hover:text-accent-yellow text-sm font-semibold transition-colors">
+                            <span>Супориш додан</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-book-open"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Флаер & Бӯклетҳо</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Тарҳрезӣ ва чопи суръатбахши рекламавии листовкаҳо, флаерҳо, каталогҳо ва бӯклетҳо барои аксияву чорабиниҳо.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="preselectService('Флаер ва Бӯклет')" class="inline-flex items-center gap-2 text-brand-400 hover:text-accent-yellow text-sm font-semibold transition-colors">
+                            <span>Супориш додан</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-shirt"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Чоп дар рӯи Сувенирҳо</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Чопи логотип дар рӯи кружка, футболка, кепка, блокнот ва ручкаҳо барои тӯҳфаҳои корпоративӣ.
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="preselectService('Чопи сувенирӣ')" class="inline-flex items-center gap-2 text-brand-400 hover:text-accent-yellow text-sm font-semibold transition-colors">
+                            <span>Супориш додан</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="glass-card rounded-2xl p-8 relative flex flex-col justify-between">
+                        <div>
+                            <div class="w-14 h-14 rounded-2xl bg-brand-600/20 border border-brand-500/30 text-brand-400 flex items-center justify-center text-2xl mb-6">
+                                <i class="fa-solid fa-sliders"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Дизайни Инфиродӣ</h3>
+                            <p class="text-slate-400 text-sm leading-relaxed mb-6">
+                                Сохтани меню барои ресторанҳо, борборкунии маҳсулот (упаковка), ва тарҳрезии маводҳо барои шабакаҳои иҷтимоӣ (SMM).
+                            </p>
+                        </div>
+                        <a href="#contact" onclick="preselectService('Дизайни Инфиродӣ')" class="inline-flex items-center gap-2 text-brand-400 hover:text-accent-yellow text-sm font-semibold transition-colors">
+                            <span>Супориш додан</span>
+                            <i class="fa-solid fa-arrow-right text-xs"></i>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="py-20 relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-12">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-500 uppercase mb-2">Намунаи Корҳо</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Портфолиои Лоиҳаҳои Мо</p>
+                    <p class="text-slate-400 mt-4 text-sm sm:text-base">Баъзе аз корҳои охирине, ки барои мизоҷони мо омода кардаем</p>
+                </div>
+
+                <!-- Filter Tabs -->
+                <div class="flex flex-wrap justify-center gap-2 sm:gap-3 mb-12">
+                    <button class="portfolio-tab active px-5 py-2.5 rounded-xl text-sm font-semibold bg-brand-600 text-white shadow-lg transition-all" data-filter="all">
+                        Ҳама
+                    </button>
+                    <button class="portfolio-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all border border-slate-700/60" data-filter="logo">
+                        Логотипҳо
+                    </button>
+                    <button class="portfolio-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all border border-slate-700/60" data-filter="cards">
+                        Визиткаҳо
+                    </button>
+                    <button class="portfolio-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all border border-slate-700/60" data-filter="banners">
+                        Баннерҳо
+                    </button>
+                    <button class="portfolio-tab px-5 py-2.5 rounded-xl text-sm font-semibold bg-slate-800/80 text-slate-300 hover:bg-slate-700 transition-all border border-slate-700/60" data-filter="flyers">
+                        Флаер & Бӯклет
+                    </button>
+                </div>
+
+                <!-- Gallery Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="portfolioGrid">
+                    
+                    <!-- Item 1: Logo -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="logo" onclick="openModal('Логотипи Ресторани «Гулистон»', 'Тарҳрезии логотип ва брендинги аслии ресторан', 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=80')">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=600&q=80" alt="Logo Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">Логотипҳо</span>
+                                <h4 class="text-lg font-bold text-white">Ресторани «Гулистон»</h4>
+                                <p class="text-slate-300 text-xs mt-1">Тарҳрезии логотип ва брендинг</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Business Card -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="cards" onclick="openModal('Визиткаи Корпоративӣ', 'Визиткаҳои чоркунҷа бо ламинатсияи Soft-Touch ва тиллокорӣ', 'https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=1000&q=80')">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&w=600&q=80" alt="Business Card" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">Визиткаҳо</span>
+                                <h4 class="text-lg font-bold text-white">Визиткаи Премиум Soft-Touch</h4>
+                                <p class="text-slate-300 text-xs mt-1">Чопи тиллокоришуда барои ширкат</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3: Banner -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="banners" onclick="openModal('Баннери Табличотӣ', 'Баннери калонҳаҷм барои маркази савдо', 'https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1000&q=80')">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=600&q=80" alt="Banner Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">Баннерҳо</span>
+                                <h4 class="text-lg font-bold text-white">Баннери Рекламавӣ</h4>
+                                <p class="text-slate-300 text-xs mt-1">Чопи калонҳаҷми хиёбонӣ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 4: Flyer -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="flyers" onclick="openModal('Флаери Рекламавӣ А5', 'Флаерҳои дутарафа барои кушодашавии мағоза', 'https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=1000&q=80')">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1572021335469-31706a17aaef?auto=format&fit=crop&w=600&q=80" alt="Flyer Design" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">Флаер & Бӯклет</span>
+                                <h4 class="text-lg font-bold text-white">Флаери Промо-Аксия</h4>
+                                <p class="text-slate-300 text-xs mt-1">Чопи босифати офсетӣ</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 5: Logo Branding -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="logo" onclick="openModal('Брендинги IT-Ширкат', 'Лоиҳаи мукаммали IT брендинг ва логотип', 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1000&q=80')">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" alt="IT Branding Logo" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">Логотипҳо</span>
+                                <h4 class="text-lg font-bold text-white">IT Стартап «TechSomon»</h4>
+                                <p class="text-slate-300 text-xs mt-1">Логотипи абстрактӣ ва муосир</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 6: Booklet -->
+                    <div class="portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer" data-category="flyers" onclick="openModal('Бӯклети Корпоративӣ', 'Евробӯклет 3-қабати бо тарҳи ҷолиб', 'https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=1000&q=80')">
+                        <div class="relative h-64 overflow-hidden">
+                            <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=600&q=80" alt="Corporate Booklet" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                                <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">Флаер & Бӯклет</span>
+                                <h4 class="text-lg font-bold text-white">Евробӯклети Хизматрасонӣ</h4>
+                                <p class="text-slate-300 text-xs mt-1">Тарҳрезӣ ва чопи катшаванда</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Pricing & Dynamic Calculator Section -->
+        <section id="pricing" class="py-20 bg-slate-900/50 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-500 uppercase mb-2">Нархнома ва Калкулятор</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-white">Нархҳои дастрас ва шаффоф</p>
+                    <p class="text-slate-400 mt-4 text-sm sm:text-base">Шумо метавонед арзиши тахминии чопро худатон ҳисоб кунед.</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                    
+                    <!-- Pricing Cards Grid -->
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <!-- Plan 1 -->
+                        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-brand-500">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Визиткаҳо</h3>
+                                <div class="flex items-baseline gap-1 my-4">
+                                    <span class="text-3xl font-extrabold text-white">аз 0.80</span>
+                                    <span class="text-slate-400 text-sm">сомонӣ / дона</span>
+                                </div>
+                                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Чопи дутарафаи рангӣ</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Қоғази 300г ғафс</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Миқдор: аз 100 дона</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" onclick="preselectService('Визиткаҳо')" class="w-full text-center py-2.5 rounded-xl bg-slate-800 hover:bg-brand-600 text-white font-semibold text-sm transition-colors">
+                                Интихоб кардан
+                            </a>
+                        </div>
+
+                        <!-- Plan 2 -->
+                        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-accent-yellow relative">
+                            <span class="absolute -top-3 right-4 px-2 py-0.5 bg-accent-yellow text-slate-950 font-extrabold text-[10px] uppercase rounded-md shadow">Машҳур</span>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Логотипи Стандарт</h3>
+                                <div class="flex items-baseline gap-1 my-4">
+                                    <span class="text-3xl font-extrabold text-white">450</span>
+                                    <span class="text-slate-400 text-sm">сомонӣ</span>
+                                </div>
+                                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> 3 намуди варианти аввалия</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Файлҳо барои чоп ва веб</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Ислоҳоти номаҳдуд</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" onclick="preselectService('Логотипи Стандарт')" class="w-full text-center py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition-colors shadow-lg">
+                                Интихоб кардан
+                            </a>
+                        </div>
+
+                        <!-- Plan 3 -->
+                        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-brand-500">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Баннер / Оракал</h3>
+                                <div class="flex items-baseline gap-1 my-4">
+                                    <span class="text-3xl font-extrabold text-white">45</span>
+                                    <span class="text-slate-400 text-sm">сомонӣ / м²</span>
+                                </div>
+                                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Чопи баландсифат (1440 dpi)</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Муқовимат ба офтобу борон</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Насби люверсҳо</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" onclick="preselectService('Баннер ва Оракал')" class="w-full text-center py-2.5 rounded-xl bg-slate-800 hover:bg-brand-600 text-white font-semibold text-sm transition-colors">
+                                Интихоб кардан
+                            </a>
+                        </div>
+
+                        <!-- Plan 4 -->
+                        <div class="glass-card rounded-2xl p-6 flex flex-col justify-between border-t-4 border-t-brand-500">
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-2">Брендинги Пурра</h3>
+                                <div class="flex items-baseline gap-1 my-4">
+                                    <span class="text-3xl font-extrabold text-white">1200</span>
+                                    <span class="text-slate-400 text-sm">сомонӣ</span>
+                                </div>
+                                <ul class="text-xs text-slate-300 space-y-2 mb-6">
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Логотип + Brandbook</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Тарҳи Визитка, Флаер, Бланк</li>
+                                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-accent-yellow"></i> Тарҳрезии шабакаҳои иҷтимоӣ</li>
+                                </ul>
+                            </div>
+                            <a href="#contact" onclick="preselectService('Брендинги Пурра')" class="w-full text-center py-2.5 rounded-xl bg-slate-800 hover:bg-brand-600 text-white font-semibold text-sm transition-colors">
+                                Интихоб кардан
+                            </a>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Column: Interactive Quick Price Estimator -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-card rounded-2xl p-6 sm:p-8 border border-brand-500/30">
+                            <h3 class="text-xl font-bold text-white mb-1 flex items-center gap-2">
+                                <i class="fa-solid fa-calculator text-accent-yellow"></i>
+                                <span>Ҳисобкунаки Чоп (Калькулятор)</span>
+                            </h3>
+                            <p class="text-xs text-slate-400 mb-6">Арзиши тахминии фармоиши худро дар як сония ҳисоб кунед:</p>
+
+                            <div class="space-y-5">
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-2">Интихоби намуди хизматрасонӣ:</label>
+                                    <select id="calcType" class="w-full bg-slate-800 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500" onchange="calculateTotal()">
+                                        <option value="business_card">Визиткаҳо (300гр)</option>
+                                        <option value="banner">Баннер (чопи калон)</option>
+                                        <option value="flyer">Флаерҳо (А5 дутарафа)</option>
+                                        <option value="sticker">Стикерҳо / Оракал</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs font-semibold text-slate-300 mb-2">
+                                        <span>Миқдор / Ҳаҷм:</span>
+                                        <span id="calcQuantityVal" class="text-accent-yellow font-bold">100 дона</span>
+                                    </div>
+                                    <input type="range" id="calcQuantity" min="50" max="5000" step="50" value="100" class="w-full accent-brand-500 bg-slate-800 rounded-lg cursor-pointer" oninput="calculateTotal()">
+                                </div>
+
+                                <div class="p-4 rounded-xl bg-slate-800/80 border border-slate-700 flex justify-between items-center">
+                                    <div>
+                                        <span class="block text-xs text-slate-400">Нархи тахминӣ:</span>
+                                        <span class="text-xs text-emerald-400 font-medium">Расонидан дохил мешавад</span>
+                                    </div>
+                                    <div class="text-right">
+                                        <span id="calcResult" class="text-2xl font-black text-white">80</span>
+                                        <span class="text-sm font-bold text-accent-yellow">сомонӣ</span>
+                                    </div>
+                                </div>
+
+                                <button onclick="sendCalculatedOrder()" class="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold py-3 rounded-xl shadow-lg transition-all text-sm flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>Ирсоли ин фармоиш</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact & Order Section -->
+        <section id="contact" class="py-20 relative border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left Info Column -->
+                    <div class="lg:col-span-5 space-y-8">
+                        <div>
+                            <h2 class="text-xs font-bold tracking-widest text-brand-500 uppercase mb-2">Алоқа бо мо</h2>
+                            <p class="text-3xl font-extrabold text-white">Савол ё фармоиш доред?</p>
+                            <p class="text-slate-400 mt-3 text-sm leading-relaxed">
+                                Формаро пур кунед ё мустақиман тавассути телефон ё Telegram бо менеҷерони мо дар тамос шавед. Мо ҳамеша омодаи ҳамкорӣ ҳастем!
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- Contact item 1 -->
+                            <div class="flex items-center gap-4 glass-card p-4 rounded-xl">
+                                <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-location-dot"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 uppercase font-semibold">Суроғаи мо</h4>
+                                    <p class="text-sm font-bold text-white">ш. Душанбе, хиёбони Рудакӣ 84</p>
+                                </div>
+                            </div>
+
+                            <!-- Contact item 2 -->
+                            <div class="flex items-center gap-4 glass-card p-4 rounded-xl">
+                                <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-phone"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 uppercase font-semibold">Телефонҳо</h4>
+                                    <p class="text-sm font-bold text-white">+992 (98) 765 43 21 / +992 (90) 123 45 67</p>
+                                </div>
+                            </div>
+
+                            <!-- Contact item 3 -->
+                            <div class="flex items-center gap-4 glass-card p-4 rounded-xl">
+                                <div class="w-12 h-12 rounded-xl bg-brand-600/20 text-brand-400 flex items-center justify-center text-xl shrink-0">
+                                    <i class="fa-solid fa-envelope"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-xs text-slate-400 uppercase font-semibold">Почтаи электронӣ</h4>
+                                    <p class="text-sm font-bold text-white">info@designprint.tj</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Direct Telegram Link -->
+                        <a href="https://t.me" target="_blank" class="flex items-center justify-center gap-3 bg-sky-600 hover:bg-sky-500 text-white font-bold py-3.5 px-6 rounded-xl transition-all shadow-lg shadow-sky-600/30">
+                            <i class="fa-brands fa-telegram text-xl"></i>
+                            <span>Дар Telegram пайваст шудан</span>
+                        </a>
+                    </div>
+
+                    <!-- Right Order Form -->
+                    <div class="lg:col-span-7">
+                        <div class="glass-card rounded-2xl p-6 sm:p-10 border border-slate-700/80">
+                            <h3 class="text-2xl font-bold text-white mb-2">Формаи фармоиш</h3>
+                            <p class="text-xs text-slate-400 mb-6">Мушаххасоти фармоишро нависед, мо дар давоми 15 дақиқа бо шумо дар тамос мешавем.</p>
+
+                            <form id="orderForm" class="space-y-5" onsubmit="handleFormSubmit(event)">
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Номи шумо *</label>
+                                        <input type="text" id="formName" required placeholder="Масалан: Алишер" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs font-semibold text-slate-300 mb-1.5">Рақами телефон *</label>
+                                        <input type="tel" id="formPhone" required placeholder="+992 900 00 00 00" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Намуди Хизматрасонӣ</label>
+                                    <select id="formService" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors">
+                                        <option value="Визиткаҳо">Визиткаҳо</option>
+                                        <option value="Логотип ва Брендинг">Логотип ва Брендинг</option>
+                                        <option value="Баннерҳо ва Оракал">Баннерҳо ва Оракал</option>
+                                        <option value="Флаер ва Бӯклет">Флаер ва Бӯклет</option>
+                                        <option value="Чопи сувенирӣ">Чопи сувенирӣ</option>
+                                        <option value="Дигарон">Дигарон</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Матни савол ё фармоиш</label>
+                                    <textarea id="formMessage" rows="4" placeholder="Тафсилоти фармоиш ва талаботҳои худро нависед..." class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none transition-colors"></textarea>
+                                </div>
+
+                                <button type="submit" class="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold py-4 rounded-xl shadow-xl shadow-brand-600/30 transition-all text-base flex items-center justify-center gap-2">
+                                    <i class="fa-solid fa-paper-plane"></i>
+                                    <span>Фармоишро ирсол кардан</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- AI Interactive Chatbot Widget (Bottom Right) -->
+    <div id="chatWidget" style="position:fixed; bottom:24px; right:24px; z-index:9999;">
+        
+        <!-- Chat Trigger Toggle Button -->
+        <button id="chatToggleBtn" onclick="toggleChat()" class="relative w-14 h-14 rounded-full bg-gradient-to-tr from-brand-700 to-brand-500 hover:from-brand-600 hover:to-brand-400 text-white flex items-center justify-center shadow-2xl shadow-brand-600/50 transition-transform active:scale-95 group">
+            <i class="fa-solid fa-comments text-2xl group-hover:scale-110 transition-transform" id="chatOpenIcon"></i>
+            <i class="fa-solid fa-xmark text-2xl hidden" id="chatCloseIcon"></i>
+            <span class="absolute -top-1 -right-1 w-4 h-4 bg-accent-yellow rounded-full border-2 border-slate-900 animate-pulse"></span>
+        </button>
+
+        <!-- Chat Window Modal -->
+        <div id="chatModal" style="bottom:72px;" class="hidden absolute right-0 w-[90vw] sm:w-[380px] h-[500px] glass-panel bg-slate-900/95 border border-slate-700/80 rounded-2xl shadow-2xl flex flex-col overflow-hidden transition-all duration-300">
+            
+            <!-- Chat Header -->
+            <div class="bg-gradient-to-r from-brand-700 to-brand-600 p-4 flex items-center justify-between text-white border-b border-brand-500/30">
+                <div class="flex items-center gap-3">
+                    <div class="relative w-9 h-9 rounded-full bg-slate-900 flex items-center justify-center text-accent-yellow border border-accent-yellow/40">
+                        <i class="fa-solid fa-robot"></i>
+                        <span class="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-slate-900"></span>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-sm leading-tight">Мушовири AI DesignPrint</h4>
+                        <span class="text-[10px] text-brand-200">Дар хат (Онлайн 24/7)</span>
+                    </div>
+                </div>
+                <button onclick="toggleChat()" class="text-slate-300 hover:text-white p-1">
+                    <i class="fa-solid fa-xmark text-lg"></i>
+                </button>
+            </div>
+
+            <!-- Chat Messages Area -->
+            <div id="chatMessages" class="flex-grow p-4 overflow-y-auto space-y-3 text-xs">
+                <!-- Bot Welcome Message -->
+                <div class="flex gap-2 max-w-[85%]">
+                    <div class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-[10px] shrink-0 mt-1">
+                        <i class="fa-solid fa-robot"></i>
+                    </div>
+                    <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none border border-slate-700 leading-relaxed">
+                        Ассалому алейкум! Ман ёрдамчии "DesignPrint" ҳастам. Шумо метавонед дар бораи нархҳо, тарҳрезӣ ё чопи визиткаву баннерҳо савол диҳед!
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Suggestion Buttons -->
+            <div class="px-3 py-2 bg-slate-950/60 border-t border-slate-800 flex gap-1.5 overflow-x-auto text-[11px] no-scrollbar">
+                <button onclick="sendQuickMessage('Нархи визитка чанд аст?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full whitespace-nowrap border border-slate-700">Визиткаҳо</button>
+                <button onclick="sendQuickMessage('Оё расонидан доред?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full whitespace-nowrap border border-slate-700">Расонидан</button>
+                <button onclick="sendQuickMessage('Мӯҳлати омодашавии лоиҳа?')" class="bg-slate-800 hover:bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full whitespace-nowrap border border-slate-700">Мӯҳлат</button>
+            </div>
+
+            <!-- Chat Input Bar -->
+            <div class="p-3 bg-slate-900 border-t border-slate-800 flex items-center gap-2">
+                <input type="text" id="chatInput" placeholder="Саволи худро нависед..." class="flex-grow bg-slate-800 text-white border border-slate-700 focus:border-brand-500 rounded-xl px-3 py-2 text-xs focus:outline-none" onkeypress="if(event.key === 'Enter') handleChatSend()">
+                <button onclick="handleChatSend()" class="w-8 h-8 rounded-xl bg-brand-600 hover:bg-brand-500 text-white flex items-center justify-center shrink-0">
+                    <i class="fa-solid fa-paper-plane text-xs"></i>
+                </button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Image Modal Preview -->
+    <div id="imageModal" class="hidden fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="relative max-w-3xl w-full glass-panel rounded-2xl overflow-hidden border border-slate-700 shadow-2xl">
+            <button onclick="closeModal()" class="absolute top-4 right-4 z-10 w-10 h-10 rounded-full bg-slate-900/80 text-white flex items-center justify-center hover:bg-red-600 transition-colors">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="max-h-[60vh] overflow-hidden bg-slate-950 flex items-center justify-center">
+                <img id="modalImg" src="" alt="Preview" class="max-h-[60vh] w-auto object-contain">
+            </div>
+            <div class="p-6">
+                <h3 id="modalTitle" class="text-xl font-bold text-white mb-2"></h3>
+                <p id="modalDesc" class="text-xs text-slate-300"></p>
+                <div class="mt-4 flex justify-end">
+                    <a href="#contact" onclick="closeModal(); preselectService('Лоиҳа аз Портфолио');" class="bg-brand-600 hover:bg-brand-500 text-white font-bold px-5 py-2 rounded-xl text-xs">
+                        Лоиҳаи монандро фармоиш диҳед
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>#toast{z-index:10001}</style>
+
+    <!-- Admin Login -->
+    <div id="adminLogin" class="hidden fixed inset-0 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4" style="z-index:10000">
+        <div class="glass-panel rounded-2xl p-6 w-full max-w-xs border border-slate-700 space-y-4">
+            <input type="password" id="adminPass" placeholder="••••••••" autocomplete="off" class="w-full bg-slate-900 border border-slate-700 focus:border-brand-500 rounded-xl px-4 py-3 text-sm text-white focus:outline-none text-center tracking-widest">
+            <button onclick="adminLogin()" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-bold py-2.5 rounded-xl text-sm">Ворид шудан</button>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminPanel" class="hidden fixed inset-0 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4" style="z-index:10000">
+        <div class="glass-panel rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto border border-slate-700 p-6 space-y-5">
+            <div class="flex items-center justify-between">
+                <h3 class="text-xl font-bold text-white"><i class="fa-solid fa-lock text-accent-yellow mr-2"></i>Админпанел</h3>
+                <button onclick="closeAdmin()" class="w-9 h-9 rounded-full bg-slate-800 hover:bg-red-600 text-white"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Номи лоиҳа *</label>
+                    <input id="admTitle" type="text" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Категория</label>
+                    <select id="admCategory" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                        <option value="logo">Логотип</option>
+                        <option value="cards">Визитка</option>
+                        <option value="banners">Баннер</option>
+                        <option value="flyers">Флаер</option>
+                    </select>
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Нарх (сомонӣ)</label>
+                    <input id="admPrice" type="text" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                </div>
+                <div>
+                    <label class="block text-xs font-semibold text-slate-300 mb-1.5">Сурат аз URL</label>
+                    <input id="admImageUrl" type="url" placeholder="https://..." class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500">
+                </div>
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Ё сурат аз компютер</label>
+                <input id="admImageFile" type="file" accept="image/*" class="w-full text-xs text-slate-300 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-brand-600 file:text-white">
+                <img id="admPreview" class="hidden mt-3 h-28 rounded-lg object-cover border border-slate-700" alt="">
+            </div>
+
+            <div>
+                <label class="block text-xs font-semibold text-slate-300 mb-1.5">Тавсиф</label>
+                <textarea id="admDesc" rows="3" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-2.5 text-sm text-white focus:outline-none focus:border-brand-500"></textarea>
+            </div>
+
+            <button onclick="addCustomItem()" class="w-full bg-gradient-to-r from-brand-600 to-brand-700 hover:from-brand-500 hover:to-brand-600 text-white font-bold py-3 rounded-xl text-sm">
+                <i class="fa-solid fa-plus mr-1"></i> Илова кардан ба портфолио
+            </button>
+
+            <div>
+                <h4 class="text-sm font-bold text-white mb-2">Корҳои иловашуда</h4>
+                <div id="admList" class="space-y-2"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="hidden fixed top-24 right-6 z-50 glass-panel bg-emerald-900/90 border border-emerald-500 text-emerald-100 px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 text-xs">
+        <i class="fa-solid fa-circle-check text-lg text-emerald-400"></i>
+        <span id="toastMessage">Фармоиши шумо бо муваффақият қабул шуд!</span>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 text-slate-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                
+                <!-- Col 1 -->
+                <div class="space-y-4">
+                    <a href="#" class="flex items-center gap-2">
+                        <div class="w-8 h-8 rounded-lg bg-brand-600 flex items-center justify-center text-white font-bold">
+                            <i class="fa-solid fa-print"></i>
+                        </div>
+                        <span class="text-xl font-black text-white">Design<span class="text-accent-yellow">Print</span></span>
+                    </a>
+                    <p class="text-xs leading-relaxed">
+                        Пешсаф дар соҳаи чопи муосир ва тарҳрезии графикӣ дар шаҳри Душанбе. Сифат, суръат ва нархи муносиб!
+                    </p>
+                </div>
+
+                <!-- Col 2 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Хизматрасониҳо</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#services" class="hover:text-white transition-colors">Тарҳрезии Логотип</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Чопи Визиткаҳо</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Баннерҳо ва Оракал</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Флаерҳо ва Бӯклетҳо</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 3 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Пайвандҳо</h4>
+                    <ul class="space-y-2 text-xs">
+                        <li><a href="#home" class="hover:text-white transition-colors">Асосӣ</a></li>
+                        <li><a href="#portfolio" class="hover:text-white transition-colors">Портфолио</a></li>
+                        <li><a href="#pricing" class="hover:text-white transition-colors">Нархнома</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Алоқа</a></li>
+                    </ul>
+                </div>
+
+                <!-- Col 4 -->
+                <div>
+                    <h4 class="text-white font-bold text-sm mb-4">Шабакаҳои иҷтимоӣ</h4>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-9 h-9 rounded-lg bg-slate-800 hover:bg-brand-600 text-white flex items-center justify-center transition-colors">
+                            <i class="fa-brands fa-telegram"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-8 border-t border-slate-800 text-center text-xs">
+                <p>&copy; 2026 DesignPrint. Тамоми ҳуқуқҳо ҳифз карда шудаанд. Душанбе, Тоҷикистон.</p>
+                <p class="mt-3 text-slate-500">Сохтори сайт: <span class="text-slate-300 font-semibold">Мирзозода Нуриддин</span> • Дизайнер: <span class="text-slate-300 font-semibold">Зарипзода Илёс</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Application Logic Script -->
+    <script>
+        // Mobile Navigation Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Portfolio Filtering Logic
+        const filterButtons = document.querySelectorAll('.portfolio-tab');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-brand-600', 'text-white');
+                    btn.classList.add('bg-slate-800/80', 'text-slate-300');
+                });
+
+                button.classList.add('active', 'bg-brand-600', 'text-white');
+                button.classList.remove('bg-slate-800/80', 'text-slate-300');
+
+                const filter = button.getAttribute('data-filter');
+
+                currentFilter = filter;
+                applyFilter();
+            });
+        });
+
+        // Price Estimator Logic
+        function calculateTotal() {
+            const type = document.getElementById('calcType').value;
+            const qty = parseInt(document.getElementById('calcQuantity').value);
+            document.getElementById('calcQuantityVal').innerText = qty + (type === 'banner' ? ' м²' : ' дона');
+
+            let rate = 0.80; // default for card
+            if (type === 'banner') rate = 45;
+            if (type === 'flyer') rate = 1.20;
+            if (type === 'sticker') rate = 3.50;
+
+            let total = Math.round(qty * rate);
+            document.getElementById('calcResult').innerText = total;
+        }
+
+        function sendCalculatedOrder() {
+            const typeSelect = document.getElementById('calcType');
+            const typeText = typeSelect.options[typeSelect.selectedIndex].text;
+            const qty = document.getElementById('calcQuantity').value;
+            const total = document.getElementById('calcResult').innerText;
+
+            const serviceField = document.getElementById('formService');
+            const messageField = document.getElementById('formMessage');
+
+            serviceField.value = "Дигарон";
+            messageField.value = `Фармоиши ҳисобшуда: ${typeText}, Ҳаҷм: ${qty}, Суммаи тахминӣ: ${total} сомонӣ.`;
+
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
+            showToast('Фармоиш ба форма илова шуд! Лутфан маълумоти алоқаро пур кунед.');
+        }
+
+        // Image Modal Logic
+        function openModal(title, desc, imgUrl) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDesc').innerText = desc;
+            document.getElementById('modalImg').src = imgUrl;
+            document.getElementById('imageModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').classList.add('hidden');
+        }
+
+        // Preselect Service in Order Form
+        function preselectService(serviceName) {
+            const select = document.getElementById('formService');
+            for (let i = 0; i < select.options.length; i++) {
+                if (select.options[i].value === serviceName) {
+                    select.selectedIndex = i;
+                    break;
+                }
+            }
+        }
+
+        // Form Submit Handler
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('formName').value;
+            showToast(`Ташаккур, ${name}! Фармоиши шумо бо муваффақият қабул шуд.`);
+            document.getElementById('orderForm').reset();
+        }
+
+        // Toast Notification Helper
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastMessage').innerText = message;
+            toast.classList.remove('hidden');
+            setTimeout(() => {
+                toast.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Chatbot Functionality
+        let isChatOpen = false;
+
+        function toggleChat() {
+            const chatModal = document.getElementById('chatModal');
+            const openIcon = document.getElementById('chatOpenIcon');
+            const closeIcon = document.getElementById('chatCloseIcon');
+
+            isChatOpen = !isChatOpen;
+
+            if (isChatOpen) {
+                chatModal.classList.remove('hidden');
+                openIcon.classList.add('hidden');
+                closeIcon.classList.remove('hidden');
+            } else {
+                chatModal.classList.add('hidden');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            }
+        }
+
+        function sendQuickMessage(text) {
+            document.getElementById('chatInput').value = text;
+            handleChatSend();
+        }
+
+        function handleChatSend() {
+            const input = document.getElementById('chatInput');
+            const text = input.value.trim();
+            if (!text) return;
+
+            // Render User Message
+            const messagesContainer = document.getElementById('chatMessages');
+            const userMsgHTML = `
+                <div class="flex justify-end gap-2 max-w-[85%] ml-auto">
+                    <div class="bg-brand-600 text-white p-3 rounded-2xl rounded-tr-none leading-relaxed">
+                        ${escapeHtml(text)}
+                    </div>
+                </div>
+            `;
+            messagesContainer.insertAdjacentHTML('beforeend', userMsgHTML);
+            input.value = '';
+            messagesContainer.scrollTop = messagesContainer.scrollHeight;
+
+            // Generate Automated Bot Answer
+            setTimeout(() => {
+                const botReply = generateBotResponse(text);
+                const botMsgHTML = `
+                    <div class="flex gap-2 max-w-[85%]">
+                        <div class="w-6 h-6 rounded-full bg-brand-600 text-white flex items-center justify-center text-[10px] shrink-0 mt-1">
+                            <i class="fa-solid fa-robot"></i>
+                        </div>
+                        <div class="bg-slate-800 text-slate-200 p-3 rounded-2xl rounded-tl-none border border-slate-700 leading-relaxed">
+                            ${botReply}
+                        </div>
+                    </div>
+                `;
+                messagesContainer.insertAdjacentHTML('beforeend', botMsgHTML);
+                messagesContainer.scrollTop = messagesContainer.scrollHeight;
+            }, 600);
+        }
+
+        // Rule-based responses in Tajik
+        function generateBotResponse(userMsg) {
+            const msg = userMsg.toLowerCase();
+
+            if (msg.includes('визитка') || msg.includes('карточка')) {
+                return 'Нархи визиткаҳо аз 0.80 сомонӣ барои 1 дона оғоз мешавад (ҳадди ақал 100 дона). Мӯҳлати омодашавӣ — 24 соат!';
+            } else if (msg.includes('баннер') || msg.includes('оракал')) {
+                return 'Чопи баннер 45 сомонӣ барои 1 метри мураббаъ мебошад. Чопи баландсифати 1440 DPI кафолат дода мешавад.';
+            } else if (msg.includes('расонидан') || msg.includes('доставка')) {
+                return 'Бале! Расонидани маҳсулот дар дохили шаҳри Душанбе барои фармоишҳои аз 200 сомонӣ боло ройгон аст.';
+            } else if (msg.includes('логотип') || msg.includes('брендинг')) {
+                return 'Тарҳрезии логотип аз 450 сомонӣ оғоз мегардад. Мо ба шумо 3 варианти гуногунро бо ислоҳоти номаҳдуд пешниҳод мекунем.';
+            } else if (msg.includes('суроға') || msg.includes('куҷо') || msg.includes('манзил')) {
+                return 'Идораи мо дар ш. Душанбе, хиёбони Рудакӣ 84 ҷойгир аст. Соатҳои корӣ: Дш-Шн аз 08:00 то 18:00.';
+            } else if (msg.includes('салом') || msg.includes('драствуй') || msg.includes('ассалом')) {
+                return 'Ассалому алейкум! Чӣ тавр ба шумо ёрдам диҳам? Шумо метавонед дар бораи нархнома ва хизматрасониҳо савол диҳед.';
+            } else {
+                return 'Ташаккур барои савол! Барои гирифтани маълумоти пурра метавонед ба рақами +992 (98) 765 43 21 занг занед ё формаи алоқаро дар сайт пур кунед.';
+            }
+        }
+
+        function escapeHtml(text) {
+            return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        }
+
+        // ===== Admin & dynamic portfolio =====
+        let currentFilter = 'all';
+        function applyFilter() {
+            document.querySelectorAll('.portfolio-item').forEach(item => {
+                item.style.display = (currentFilter === 'all' || item.dataset.category === currentFilter) ? 'block' : 'none';
+            });
+        }
+
+        const STORE_KEY = 'portfolio_custom_items';
+        const CAT_NAMES = { logo: 'Логотипҳо', cards: 'Визиткаҳо', banners: 'Баннерҳо', flyers: 'Флаер & Бӯклет' };
+        const _k = 'MjAwNzIwMDc=';
+        let adminImageData = '';
+
+        function loadItems() {
+            try { return JSON.parse(localStorage.getItem(STORE_KEY)) || []; } catch (e) { return []; }
+        }
+        function saveItems(list) {
+            try { localStorage.setItem(STORE_KEY, JSON.stringify(list)); return true; }
+            catch (e) { showToast('Хотира пур аст. Сурати хурдтар интихоб кунед.'); return false; }
+        }
+
+        function renderCustomItems() {
+            document.querySelectorAll('.portfolio-item[data-custom]').forEach(e => e.remove());
+            const grid = document.getElementById('portfolioGrid');
+            loadItems().forEach(it => {
+                const priceTxt = it.price ? ' • Нарх: ' + it.price + ' сомонӣ' : '';
+                const el = document.createElement('div');
+                el.className = 'portfolio-item glass-card rounded-2xl overflow-hidden group cursor-pointer';
+                el.dataset.category = it.category;
+                el.dataset.custom = it.id;
+                el.innerHTML = `
+                    <div class="relative h-64 overflow-hidden">
+                        <img alt="" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-gradient-to-t from-slate-950 via-slate-950/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
+                            <span class="text-xs font-bold text-accent-yellow uppercase tracking-wider mb-1">${CAT_NAMES[it.category] || ''}</span>
+                            <h4 class="text-lg font-bold text-white">${escapeHtml(it.title)}</h4>
+                            <p class="text-slate-300 text-xs mt-1">${escapeHtml((it.desc || '') + priceTxt)}</p>
+                        </div>
+                    </div>`;
+                el.querySelector('img').src = it.image;
+                el.addEventListener('click', () => openModal(it.title, (it.desc || '') + priceTxt, it.image));
+                grid.appendChild(el);
+            });
+            applyFilter();
+        }
+
+        function renderAdminList() {
+            const box = document.getElementById('admList');
+            const items = loadItems();
+            box.innerHTML = items.length ? '' : '<p class="text-xs text-slate-500">Ҳоло чизе илова нашудааст.</p>';
+            items.forEach(it => {
+                const row = document.createElement('div');
+                row.className = 'flex items-center gap-3 bg-slate-900 border border-slate-700 rounded-xl p-2';
+                row.innerHTML = `<img class="w-12 h-12 rounded-lg object-cover" alt="">
+                    <div class="flex-grow min-w-0">
+                        <p class="text-sm font-semibold text-white truncate">${escapeHtml(it.title)}</p>
+                        <p class="text-[11px] text-slate-400">${CAT_NAMES[it.category] || ''}${it.price ? ' • ' + escapeHtml(it.price) + ' сомонӣ' : ''}</p>
+                    </div>
+                    <button class="w-8 h-8 rounded-lg bg-red-600/20 hover:bg-red-600 text-red-300 hover:text-white"><i class="fa-solid fa-trash text-xs"></i></button>`;
+                row.querySelector('img').src = it.image;
+                row.querySelector('button').addEventListener('click', () => deleteItem(it.id));
+                box.appendChild(row);
+            });
+        }
+
+        function addCustomItem() {
+            const title = document.getElementById('admTitle').value.trim();
+            const url = document.getElementById('admImageUrl').value.trim();
+            const image = adminImageData || url;
+            if (!title || !image) { showToast('Ном ва суратро пур кунед.'); return; }
+            const list = loadItems();
+            list.push({
+                id: 'c' + Date.now(),
+                title,
+                category: document.getElementById('admCategory').value,
+                price: document.getElementById('admPrice').value.trim(),
+                desc: document.getElementById('admDesc').value.trim(),
+                image
+            });
+            if (!saveItems(list)) return;
+            ['admTitle', 'admPrice', 'admDesc', 'admImageUrl', 'admImageFile'].forEach(id => document.getElementById(id).value = '');
+            adminImageData = '';
+            document.getElementById('admPreview').classList.add('hidden');
+            renderCustomItems();
+            renderAdminList();
+            showToast('Кор ба портфолио илова шуд!');
+        }
+
+        function deleteItem(id) {
+            saveItems(loadItems().filter(i => i.id !== id));
+            renderCustomItems();
+            renderAdminList();
+        }
+
+        // Local file upload (compressed so localStorage doesn't overflow)
+        document.getElementById('admImageFile').addEventListener('change', e => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = ev => {
+                const img = new Image();
+                img.onload = () => {
+                    const s = Math.min(1, 900 / Math.max(img.width, img.height));
+                    const c = document.createElement('canvas');
+                    c.width = Math.round(img.width * s);
+                    c.height = Math.round(img.height * s);
+                    c.getContext('2d').drawImage(img, 0, 0, c.width, c.height);
+                    adminImageData = c.toDataURL('image/jpeg', 0.8);
+                    const pv = document.getElementById('admPreview');
+                    pv.src = adminImageData;
+                    pv.classList.remove('hidden');
+                };
+                img.src = ev.target.result;
+            };
+            reader.readAsDataURL(file);
+        });
+
+        // Secret access: double-click on logo
+        document.getElementById('logoLink').addEventListener('dblclick', e => {
+            e.preventDefault();
+            const box = document.getElementById('adminLogin');
+            document.getElementById('adminPass').value = '';
+            box.classList.remove('hidden');
+            document.getElementById('adminPass').focus();
+        });
+        document.getElementById('adminPass').addEventListener('keydown', e => { if (e.key === 'Enter') adminLogin(); });
+
+        function adminLogin() {
+            const val = document.getElementById('adminPass').value;
+            document.getElementById('adminPass').value = '';
+            document.getElementById('adminLogin').classList.add('hidden');
+            if (btoa(val) === _k) {
+                renderAdminList();
+                document.getElementById('adminPanel').classList.remove('hidden');
+            }
+            // Хато бошад — ҳеҷ паём нишон дода намешавад
+        }
+        function closeAdmin() { document.getElementById('adminPanel').classList.add('hidden'); }
+
+        document.addEventListener('keydown', e => {
+            if (e.key === 'Escape') {
+                closeAdmin();
+                document.getElementById('adminLogin').classList.add('hidden');
+            }
+        });
+        document.getElementById('adminLogin').addEventListener('click', e => {
+            if (e.target.id === 'adminLogin') e.currentTarget.classList.add('hidden');
+        });
+
+        renderCustomItems();
+    </script>
+</body>
+</html>
